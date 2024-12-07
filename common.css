@@ -1,0 +1,164 @@
+/* @font-face {
+    font-family: "Inter";
+    src: url("./fonts/Inter-VariableFont_opsz\,wght.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Inter_Italic";
+    src: url("./fonts/Inter-Italic-VariableFont_opsz\,wght.woff2") format("woff2");
+} */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+    --container: 1760px;
+    --container-md: 1560px;
+    --container-sm: 1360px;
+    --container-md-px: 6.5%;
+    --container-sm-px: 10.4655%;
+
+    --max-vw: 1440;
+    --min-vw: 640;
+    --min-vw-px: calc(var(--min-vw) * 1px);
+    --max-vw-px: calc(var(--max-vw) * 1px);
+
+
+    --red: #F82C2C;
+    --black: #161616;
+    --light-black: #262626;
+    --dark: #1B1B1B;
+    --white: #FFFFFF;
+    --grey: #C0C0C0;
+
+    /* --font: 'Inter'; */
+    --bold: 700;
+    --semibold: 600;
+    --medium: 500;
+    --normal: 400;
+
+    --h1: 32;
+    --h2: 20;
+    --h3: 18;
+    --text: 18;
+    --text-sm: 12;
+    --text-btn: 14;
+
+    --h1-min: calc(var(--h1) * 0.7);
+    --h2-min: calc(var(--h2) * 0.8);
+    --h3-min: calc(var(--h3) * 0.85);
+    --text-min: calc(var(--text) * 0.80);
+    --text-sm-min: calc(var(--text-sm) * 0.95);
+    --text-btn-min: calc(var(--text-btn) * 0.9);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: var(--normal);
+    scroll-behavior: smooth;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.heading1 {
+    --slope: calc((var(--max-fs) - var(--min-fs)) / (var(--max-vw) - var(--min-vw)));
+    --min-fs-px: calc(var(--min-fs) * 1px);
+    --max-fs-px: calc(var(--max-fs) * 1px);
+    --fs-px: calc(var(--slope) * (100vw - var(--min-vw-px)) + var(--min-fs-px));
+    font-size: clamp(var(--min-fs-px), var(--fs-px), var(--max-fs-px));
+
+    --max-fs: var(--h1);
+    --min-fs: var(--h1-min);
+}
+
+.heading2 {
+    --slope: calc((var(--max-fs) - var(--min-fs)) / (var(--max-vw) - var(--min-vw)));
+    --min-fs-px: calc(var(--min-fs) * 1px);
+    --max-fs-px: calc(var(--max-fs) * 1px);
+    --fs-px: calc(var(--slope) * (100vw - var(--min-vw-px)) + var(--min-fs-px));
+    font-size: clamp(var(--min-fs-px), var(--fs-px), var(--max-fs-px));
+
+    --max-fs: var(--h2);
+    --min-fs: var(--h2-min);
+}
+
+.heading3 {
+    --slope: calc((var(--max-fs) - var(--min-fs)) / (var(--max-vw) - var(--min-vw)));
+    --min-fs-px: calc(var(--min-fs) * 1px);
+    --max-fs-px: calc(var(--max-fs) * 1px);
+    --fs-px: calc(var(--slope) * (100vw - var(--min-vw-px)) + var(--min-fs-px));
+    font-size: clamp(var(--min-fs-px), var(--fs-px), var(--max-fs-px));
+
+    --max-fs: var(--h3);
+    --min-fs: var(--h3-min);
+}
+
+.text {
+    --slope: calc((var(--max-fs) - var(--min-fs)) / (var(--max-vw) - var(--min-vw)));
+    --min-fs-px: calc(var(--min-fs) * 1px);
+    --max-fs-px: calc(var(--max-fs) * 1px);
+    --fs-px: calc(var(--slope) * (100vw - var(--min-vw-px)) + var(--min-fs-px));
+    font-size: clamp(var(--min-fs-px), var(--fs-px), var(--max-fs-px));
+
+    --max-fs: var(--text);
+    --min-fs: var(--text-min);
+}
+
+.text-sm {
+    --slope: calc((var(--max-fs) - var(--min-fs)) / (var(--max-vw) - var(--min-vw)));
+    --min-fs-px: calc(var(--min-fs) * 1px);
+    --max-fs-px: calc(var(--max-fs) * 1px);
+    --fs-px: calc(var(--slope) * (100vw - var(--min-vw-px)) + var(--min-fs-px));
+    font-size: clamp(var(--min-fs-px), var(--fs-px), var(--max-fs-px));
+
+    --max-fs: var(--text-sm);
+    --min-fs: var(--text-sm-min);
+}
+
+.text-btn {
+    --slope: calc((var(--max-fs) - var(--min-fs)) / (var(--max-vw) - var(--min-vw)));
+    --min-fs-px: calc(var(--min-fs) * 1px);
+    --max-fs-px: calc(var(--max-fs) * 1px);
+    --fs-px: calc(var(--slope) * (100vw - var(--min-vw-px)) + var(--min-fs-px));
+    font-size: clamp(var(--min-fs-px), var(--fs-px), var(--max-fs-px));
+
+    --max-fs: var(--text-btn);
+    --min-fs: var(--text-btn-min);
+}
+
+.font-bold {
+    font-weight: var(--bold);
+}
+
+.font-semibold {
+    font-weight: var(--semibold);
+}
+
+.font-medium {
+    font-weight: var(--medium);
+}
+
+.font-normal {
+    font-weight: var(--normal);
+}
+
+.container {
+    max-width: 1760px;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}  
+@media screen and (min-width: 640px) {
+    .container-md {
+        padding-inline: var(--container-md-px);
+    }
+    .container-sm {
+        padding-inline: var(--container-sm-px);
+    }
+}
